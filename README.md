@@ -87,11 +87,9 @@ Provides encryption, authentication, authorization, and transaction protection.
 ElectronicWalletSystem/
 │
 ├── backend/
-│   ├── api/
-│   ├── models/
-│   ├── services/
-│   ├── database/
-│   ├── auth/
+│   ├── wallet_system/
+│   ├── ai_agent.py
+│   ├── wallet.py
 │   └── main.py
 │
 ├── frontend/
@@ -109,66 +107,6 @@ ElectronicWalletSystem/
 ├── requirements.txt
 ├── README.md
 ```
-
----
-
-# Database Design
-
-## Main Tables
-
-### Users Table
-| Field | Type | Description |
-|------|------|-------------|
-| id | INT | Unique user ID |
-| full_name | VARCHAR | User full name |
-| email | VARCHAR | User email |
-| password | VARCHAR | Encrypted password |
-| created_at | DATETIME | Account creation date |
-
-### Wallets Table
-| Field | Type | Description |
-|------|------|-------------|
-| wallet_id | INT | Wallet ID |
-| user_id | INT | Owner user ID |
-| balance | DECIMAL | Current balance |
-
-### Transactions Table
-| Field | Type | Description |
-|------|------|-------------|
-| transaction_id | INT | Transaction ID |
-| sender_id | INT | Sender user |
-| receiver_id | INT | Receiver user |
-| amount | DECIMAL | Transaction amount |
-| status | VARCHAR | Transaction status |
-| created_at | DATETIME | Transaction date |
-
----
-
-# API Endpoints
-
-## Authentication
-
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| POST | /register | Create new account |
-| POST | /login | User login |
-| POST | /logout | User logout |
-
-## Wallet Operations
-
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| GET | /wallet | Get wallet balance |
-| POST | /deposit | Deposit money |
-| POST | /withdraw | Withdraw money |
-| POST | /transfer | Transfer money |
-
-## Transactions
-
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| GET | /transactions | Get transaction history |
-| GET | /transaction/{id} | Get transaction details |
 
 ---
 
